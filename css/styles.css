@@ -1,0 +1,47 @@
+body {
+font-family: Arial, sans-serif; 
+background: #f0f8ff; 
+text-align: center;
+padding: 2 rem;
+}
+
+.container {
+max-width: 500px;
+margin: auto;
+background: white;
+padding: 2 rem;
+border-radius: 20 px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+color: #444;
+margin-bottom: 1 rem;
+}
+
+img  {
+width: 200px;
+height: auto;
+margin-bottom: 1 rem;
+transition: transform 0.3 ease;
+}
+
+#status {
+font-size: 1.2 rem;
+margin-bottom: 1.5 rem;
+}
+.buttons button {
+margin: 10 px;
+padding: 10 px 20 px;
+font-size: 1 rem;
+background-color: #88c057;
+color: wihite;
+border: none;
+border-radius: 10 px;
+cursor: pointer;
+transition: background-color 0.2s ease;
+}
+
+.buttons button hover {
+    background-color: #6da640;
+}
