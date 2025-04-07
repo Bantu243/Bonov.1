@@ -1,118 +1,59 @@
 body {
 font-family: Arial, sans-serif; 
-background: #f0f8ff; 
+background: linear-gradient(#7fbf7f, #3b7f3b); 
 text-align: center;
-padding: 2 rem;
+padding: 2rem;
 }
+
+body.baby {
+background: url(C:\Users\dsalogale\.vscode\BonoV.1\Bonov.1\assets\Bono-Baby.jpg) no-repeat center center fixed;
+background-size: cover;
+}
+
+body.kind {
+background: url() no-repeat center center fixed;
+background-size: cover;
+}
+
+body.erwachsen {
+background: url() no-repeat center center fixed;
+background-size: cover;
+}
+
 
 .container {
 max-width: 500px;
 margin: auto;
 background: white;
-padding: 2 rem;
-border-radius: 20 px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+padding: 2rem;
+border-radius: 20px;
+box-shadow: 0 4px 12px rgba(0,0,0, 0.1);
 }
+
 
 h1 {
 color: #444;
-margin-bottom: 1 rem;
+margin-bottom: 1rem;
 }
 
-img  {
-width: 200px;
-height: auto;
-margin-bottom: 1 rem;
-transition: transform 0.3 ease;
-}
 
 #status {
-font-size: 1.2 rem;
-margin-bottom: 1.5 rem;
+font-size: 1.2rem;
+margin-bottom: 1.5rem;
 }
+
 .buttons button {
-margin: 10 px;
-padding: 10 px 20 px;
-font-size: 1 rem;
+margin: 10px;
+padding: 10px 20px;
+font-size: 1rem;
 background-color: #88c057;
-color: wihite;
+color: white;
 border: none;
-border-radius: 10 px;
+border-radius: 10px;
 cursor: pointer;
 transition: background-color 0.2s ease;
 }
 
-.buttons button hover {
+.buttons button:hover {
     background-color: #6da640;
-}
-
-.bono {
-position: relative;
-width: 200px;
-height: 200px;
-margin: 50px;
-}
-
-.kopf{
-background: #8d5524;
-width: 150px;
-height: 150px;
-border-radius: 50%;
-position: relative;
-margin: auto;
-}
-
-.ohr{
-width: 50px;
-height: 50px;
-background: #c68642;
-border-radius: 50px;
-position: absolute;
-top: 30%;
-}
-
-.ohr.links{
-left: -25px;
-}
-
-.ohr.rechts{
-right: -25px;    
-}
-
-.auge{
-width: 20px;
-height: 20px;
-background: white;
-border-radius: 50%;
-position: absolute;
-top: 40px;
-}
-
-.auge.links {
-left: 35px;
-}
-
-.auge.rechts {
-right: 35px;
-}
-
-.mund {
-width: 40px;
-height: 20px;
-background: #fff;
-border-radius: 0 0 40px 40px;
-position: absolute;
-bottom: 35px;
-left: 50px;
-}
-
-.windel {
-width: 80px;
-height: 40px;
-background: #dff;
-border-radius: 50% 50% 10% 10%;
-position: absolute;
-bottom: -20px;
-left: 35px;
-border: 2px solid #aad;
 }
