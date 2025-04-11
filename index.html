@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" 	/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Bono - dein kleiner Freund</title> 
-	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/styles.css"/>
 </head>
 
 
@@ -18,10 +18,38 @@
     
 
         <div class="buttons">
-			<button onclick="füttern()">Füttern</button>
+			<button onclick="fuettern()">Füttern</button>
             <button onclick="spielen()">Spielen</button>
         </div>
-    </div> 
+
+       
+       
+       
+        <div class="stats">
+            <div class="stats-container">
+                <div class="stat-label">Hunger:</div>
+                <div class="stat-bar">
+                    <div id="hunger-bar"    class="stat-fill"></div>
+                </div>
+            </div>
+
+        
+
+        <div class="stats-container">
+            <div class="stat-label">Laune:</div>
+            <div class="stat-bar">
+                <div id="laune-bar" class="stat-fill"></div>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-label">Alter:</div>
+            <div id="alter-wert">0</div>
+        </div>
+    </div>
+
+</div> 
+
 
     <script src="js/script.js"></script>
 </body>

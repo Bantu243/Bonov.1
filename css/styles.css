@@ -1,59 +1,119 @@
 body {
-font-family: Arial, sans-serif; 
-background: linear-gradient(#7fbf7f, #3b7f3b); 
-text-align: center;
-padding: 2rem;
+margin: 0;
+    font-family: Arial, sans-serif; 
+    background: #7fbf7f; 
+    text-align: center;
+    padding: 2rem;
+    transition: background 0.5s ease;
 }
 
 body.baby {
-background: url(C:\Users\dsalogale\.vscode\BonoV.1\Bonov.1\assets\Bono-Baby.jpg) no-repeat center center fixed;
-background-size: cover;
+    background: url('') no-repeat center center fixed;
+    background-size: cover;
 }
 
 body.kind {
-background: url() no-repeat center center fixed;
-background-size: cover;
+    background: url() no-repeat center center fixed;
+    background-size: cover;
 }
 
 body.erwachsen {
-background: url() no-repeat center center fixed;
-background-size: cover;
+    background: url() no-repeat center center fixed;
+    background-size: cover;
 }
 
 
 .container {
-max-width: 500px;
-margin: auto;
-background: white;
-padding: 2rem;
-border-radius: 20px;
-box-shadow: 0 4px 12px rgba(0,0,0, 0.1);
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0, 0.1);
 }
 
 
 h1 {
-color: #444;
-margin-bottom: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
+
+
+#canvas{
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 
 #status {
-font-size: 1.2rem;
-margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    background-color: 10px;
+    color: #333;
 }
 
+.buttons{
+    margin-bottom: 1.5rem; 
+}
+
+
 .buttons button {
-margin: 10px;
-padding: 10px 20px;
-font-size: 1rem;
-background-color: #88c057;
-color: white;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-transition: background-color 0.2s ease;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #88c057;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
 }
 
 .buttons button:hover {
     background-color: #6da640;
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 15);
+}
+
+.buttons button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+.stats {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.stat-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.stat-bar {
+    flex-grow: 1;
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
 }
