@@ -88,7 +88,7 @@ h1 {
 
 
 
-
+/* Statistik-Balken */
 
 .stats {
     background-color: #f0f0f0;
@@ -116,4 +116,28 @@ h1 {
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    width: 50%;
+    background-color: #88c057;
+    border-radius: 10px;
+    transition: width 0,3s ease;
+}
+
+
+
+
+#hunger-bar {
+    background-color: #ff7f50;
+}
+
+#laune-bar {
+    background-color: #5da9e9;
+}
+
+#alter-wert {
+    font-weight: bold;
+    margin-left: 10px;
 }
