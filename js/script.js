@@ -1,98 +1,56 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+   const canvas = document.getElementById("canvas");
+   const ctx    = canvas.getContext("2d");
+   const img    = document.getElementById("pig-source");
 
-      //Grundgerüst für Bono
-   let hunger = 5;
-   let laune = 5;
-   let alter = 0;
+   console.log("✅ script.js geladen");
 
-
-   const canvas =document.getElementById("canvas");
-   const ctx = canvas.getContext("2d");
-
-      
-      //UI-Elemente für Statusanzeige
-  const hungerBar = document.getElementById("hunger-bar"); 
-  const launeBar = document.getElementById("laune-bar"); 
-  const alterWert = document.getElementById("alter-wert"); 
-
-    
-  //Animationen 
-let animationFrame;
-let bewegungX = 0;
-let bewegungY = 0;
-let bewegungsRichtung = 1;
-
-
-   // SVG in Canvas zeichnen 
-function drawBono() {
-   
-   //Canvas leeren 
-   ctx.clearRect(0,0, canvas.clientWidth, canvas.height);
-
-
-   //Farben 
-   const fellFarbe = "#8d5524";
-   const hautFarbe = '#f3d19c';
-
-
-   //Größenberechnung - Alter 
-   const groesseFaktor = 0.8 + (alter*0.05);
-   const zentrum = {
-      x: canvas.width / 2 + bewegungX, 
-      y:canvas.height / 2 + bewegungY 
-
+ 
+   let hunger = 5, laune = 5, alter = 0;
+   const hungerBar = document.getElementById("hunger-bar");
+   const launeBar  = document.getElementById("laune-bar");
+   const alterWert = document.getElementById("alter-wert");
+ 
+   // Funktion, die startet, wenn das Bild sicher verfügbar ist
+   function startAnimation() {
+     console.log("🐷 Bild geladen:", img.naturalWidth, "×", img.naturalHeight);
+     requestAnimationFrame(animate);
+   }
+ 
+   // Wenn Bild im Cache und schon geladen, sofort starten
+   if (img.complete && img.naturalWidth !== 0) {
+     startAnimation();
+   } else {
+     img.onload = startAnimation;
+     img.onerror = () => console.error("Fehler beim Laden des Bildes:", img.src);
+   }
+ 
+   function draw() {
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+     const x = (canvas.width  - img.width)  / 2;
+     const y = (canvas.height - img.height) / 2;
+     ctx.drawImage(img, x, y);
+   }
+ 
+   function updateUI() {
+     hungerBar.style.width = (hunger * 10) + "%";
+     launeBar.style.width  = (laune  * 10) + "%";
+     alterWert.textContent = alter + " Tage";
+   }
+ 
+   function animate() {
+     draw();
+     updateUI();
+     requestAnimationFrame(animate);
+   }
+ 
+   window.fuettern = () => {
+     hunger = Math.max(0, hunger - 2);
+     laune  = Math.min(10, laune + 1);
    };
-
-
-   //Kopf 
-ctx.beginPath();    
-ctx.arc(zentrum.x, zentrum.y - 70 * groesseFaktor, 50 * groesseFaktor, 0, Math.PI * 2);
-ctx.fillStyle = fellFarbe;
-ctx.fill();
-
-   // Ohren 
-   //Links außen
-
-   ctx.beginPath();    
-   ctx.arc(zentrum.x - 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor, 20 * groesseFaktor, 0, Math.PI * 2);
-   ctx.fillStyle = fellFarbe;
-   ctx.fill();
-
-   //Rechts außen 
-   ctx.beginPath();    
-   ctx.arc(zentrum.x - 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor, 20 * groesseFaktor, 0, Math.PI * 2);
-   ctx.fillStyle = fellFarbe;
-   ctx.fill();
-
-
-   //links innen 
-   ctx.beginPath();    
-   ctx.arc(zentrum.x - 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor, 15 * groesseFaktor, 0, Math.PI * 2);
-   ctx.fillStyle = fellFarbe;
-   ctx.fill();
-
-   //rechts innen
-   ctx.beginPath();    
-   ctx.arc(zentrum.x - 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor, 15 * groesseFaktor, 0, Math.PI * 2);
-   ctx.fillStyle = fellFarbe;
-   ctx.fill();
-
-
-
-   //Gesicht 
-   ctx.moveTo(zentrum.x - 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor);
-   ctx.quadraticCurveTo(zentrum.x, zentrum.y, zentrum.x + 50 * groesseFaktor, zentrum.y - 70 * groesseFaktor );
-   ctx.quadraticCurveTo(zentrum.x, zentrum.y -140 * groesseFaktor, zentrum.x -50 * groesseFaktor,zentrum.y - 70 * groesseFaktor)
-   ctx.fillStyle = hautFarbe
-   ctx.fill();
-}
-
-
-
-
-
-
-
-
-}
-)
+   window.spielen = () => {
+     laune  = Math.min(10, laune + 2);
+     hunger = Math.min(10, hunger + 1);
+   };
+ });
+ 
